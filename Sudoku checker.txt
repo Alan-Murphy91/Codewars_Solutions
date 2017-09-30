@@ -1,0 +1,157 @@
+function doneOrNot(board){
+  var testArr = [];
+  var checkArr = [];
+
+  for(var i=0; i<9; i++){
+    testArr.push(board[i]);
+}
+testArr = testArr[0].concat(testArr[1], testArr[2], testArr[3], testArr[4], testArr[5], testArr[6], testArr[7], testArr[8]);
+testArr.sort(); 
+if( testArr.lastIndexOf(1) !== 8){ return "Try again!"; }
+if( testArr.lastIndexOf(2) !== 17){ return "Try again!"; }
+if( testArr.lastIndexOf(3) !== 26){ return "Try again!"; }
+if( testArr.lastIndexOf(4) !== 35){ return "Try again!"; }
+if( testArr.lastIndexOf(5) !== 44){ return "Try again!"; }
+if( testArr.lastIndexOf(6) !== 53){ return "Try again!"; }
+if( testArr.lastIndexOf(7) !== 62){ return "Try again!"; }
+if( testArr.lastIndexOf(8) !== 71){ return "Try again!"; }
+if( testArr.lastIndexOf(9) !== 80){ return "Try again!"; }
+testArr = [];
+for(var i=0; i<9; i++){
+    testArr.push(board[i]);
+}
+
+for(var i=0; i<9; i++){
+if(testArr[i].reduce(function(sum, value) { return sum + value; }) !== 45){ return "Try again!"; }
+}
+testArr = [];
+
+  for(var h=0; h<9; h++){
+    for(var i=0; i<9; i++){
+      for(var j=h; j<h+1; j++){
+        testArr.push(board[i][j]);
+}
+}
+}
+
+testArr.sort();
+if( testArr.lastIndexOf(1) !== 8){ return "Try again!"; }
+if( testArr.lastIndexOf(2) !== 17){ return "Try again!"; }
+if( testArr.lastIndexOf(3) !== 26){ return "Try again!"; }
+if( testArr.lastIndexOf(4) !== 35){ return "Try again!"; }
+if( testArr.lastIndexOf(5) !== 44){ return "Try again!"; }
+if( testArr.lastIndexOf(6) !== 53){ return "Try again!"; }
+if( testArr.lastIndexOf(7) !== 62){ return "Try again!"; }
+if( testArr.lastIndexOf(8) !== 71){ return "Try again!"; }
+if( testArr.lastIndexOf(9) !== 80){ return "Try again!"; }
+testArr = [];
+
+  for(var h=0; h<9; h++){
+    for(var i=0; i<9; i++){
+      for(var j=h; j<h+1; j++){
+        testArr.push(board[i][j]);
+}
+}
+}
+do {
+checkArr = testArr.splice(0,9);
+if(checkArr.reduce(function(sum, value) { return sum + value; }) !== 45){ return "Try again!"; }
+}
+while(testArr.length >= 9);
+
+
+ //------------------------------box check----------------------
+
+for(var i=0; i<3; i++){
+  for(var j=0; j<3; j++){
+    testArr.push(board[i][j]);
+}
+}
+if(testArr.reduce(function(sum, value) { return sum + value; }) !== 45){ return "Try again!"; }
+
+testArr = [];
+
+
+for(var i=3; i<6; i++){
+  for(var j=0; j<3; j++){
+    testArr.push(board[i][j]);
+}
+}
+if(testArr.reduce(function(sum, value) { return sum + value; }) !== 45){ return "Try again!"; }
+
+testArr = [];
+
+
+for(var i=6; i<9; i++){
+  for(var j=0; j<3; j++){
+    testArr.push(board[i][j]);
+}
+}
+if(testArr.reduce(function(sum, value) { return sum + value; }) !== 45){ return "Try again!"; }
+
+testArr = [];
+
+
+for(var i=0; i<3; i++){
+  for(var j=3; j<6; j++){
+    testArr.push(board[i][j]);
+}
+}
+if(testArr.reduce(function(sum, value) { return sum + value; }) !== 45){ return "Try again!"; }
+
+testArr = [];
+
+
+for(var i=3; i<6; i++){
+  for(var j=3; j<6; j++){
+    testArr.push(board[i][j]);
+}
+}
+if(testArr.reduce(function(sum, value) { return sum + value; }) !== 45){ return "Try again!"; }
+
+testArr = [];
+
+
+for(var i=6; i<9; i++){
+  for(var j=3; j<6; j++){
+    testArr.push(board[i][j]);
+}
+}
+if(testArr.reduce(function(sum, value) { return sum + value; }) !== 45){ return "Try again!"; }
+
+testArr = [];
+
+
+for(var i=0; i<3; i++){
+  for(var j=6; j<9; j++){
+    testArr.push(board[i][j]);
+}
+}
+if(testArr.reduce(function(sum, value) { return sum + value; }) !== 45){ return "Try again!"; }
+
+testArr = [];
+
+
+for(var i=3; i<6; i++){
+  for(var j=6; j<9; j++){
+    testArr.push(board[i][j]);
+}
+}
+if(testArr.reduce(function(sum, value) { return sum + value; }) !== 45){ return "Try again!"; }
+
+testArr = [];
+
+
+for(var i=6; i<9; i++){
+  for(var j=6; j<9; j++){
+    testArr.push(board[i][j]);
+}
+}
+if(testArr.reduce(function(sum, value) { return sum + value; }) !== 45){ return "Try again!"; }
+
+testArr = [];
+
+if(testArr.length < 1){
+return "Finished!";
+}
+}

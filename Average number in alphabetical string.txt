@@ -1,0 +1,24 @@
+function averageString(str) {
+  var newStr = str.replace(/zero/g,'0').replace(/nine/g,'9').replace(/five/g,'5').replace(/two/g,'2').replace(/one/g,'1').replace(/three/g,'3').replace(/four/g,'4').replace(/six/g,'6').replace(/seven/g,'7').replace(/eight/g,'8')
+  var xarr = [];
+  var arr = newStr.split(" ");
+  
+  for(var i=0;i<arr.length;i++){
+    if(arr[i].length > 6){ return "n/a" }
+    xarr.push(parseInt(arr[i]));
+    
+}
+
+xarr =  xarr.reduce(function(sum, value) {
+  return sum + value;
+}, 0);
+
+var ans = Math.floor(xarr/arr.length);
+ans = ans.toString();
+var newAns = ans.replace(/0/g,'zero').replace(/9/g,'nine').replace(/5/g,'five').replace(/2/g,'two').replace(/1/g,'one').replace(/3/g,'three').replace(/4/g,'four').replace(/6/g,'six').replace(/7/g,'seven').replace(/8/g,'eight');
+
+if(str.length < 1){
+  return "n/a";
+} else {
+  return newAns;
+}
