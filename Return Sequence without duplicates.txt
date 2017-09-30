@@ -1,0 +1,21 @@
+var uniqueInOrder=function(iterable){
+  if(Array.isArray(iterable)){
+    var newArr = [];
+    for (var i=0; i<iterable.length; i++){
+      if(iterable[i] !== iterable[i+1] || iterable.indexOf(iterable[i]) == iterable.length){
+        newArr.push(iterable[i]);
+}
+}
+     return newArr;
+}
+   else {
+    iterable.split("");
+    var newArr1 = [];
+     for (var j=0; j<iterable.length; j++){
+      if(iterable[j] !== iterable[j+1] || iterable.indexOf(iterable[j]) == iterable.length){
+        newArr1.push(iterable[j]);
+}
+}
+     return newArr1;
+}
+};
