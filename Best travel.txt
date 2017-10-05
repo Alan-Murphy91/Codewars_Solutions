@@ -1,0 +1,36 @@
+function chooseBestSum(t, k, ls) {
+/*subarray code https://www.quora.com/What-is-the-algorithm-to-find-all-subarrays-of-a-given-array */
+
+function getSubArrays(a,num){
+  var p = 0,
+      r = [],
+      t = [];
+  for (var i = 0, la = a.length; i < la; i++){
+    r.push([a[i]]);
+    p = r.length-1;
+    for (var j = i+1; j < la; j++)
+      for (var k = p, lr = r.length; k < lr; k++){
+        t = r[k].slice();
+        t.push(a[j]);
+        r.push(t);
+      }
+  }
+  return r.filter(function(arr){
+  return arr.length == num;
+});
+}
+  var total = 0;
+
+  var arr = getSubArrays(ls,k);
+  for(var x in arr){
+    var b = arr[x].reduce(function(sum, value) {
+    return sum + value;
+    }, 0);
+    if (b > total && b <= t){
+      total = b;
+    }
+  }
+
+  if(total === 0){
+    return null;
+  }
