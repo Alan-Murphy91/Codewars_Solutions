@@ -1,0 +1,10 @@
+function zeros (n) {
+  var i = 1;
+  var result = 0;
+  do {
+    i = i * 5;
+    result += Math.floor(n/i);
+  }
+  while(n >= i);
+  return result;
+}
