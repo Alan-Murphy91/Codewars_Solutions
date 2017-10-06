@@ -1,0 +1,10 @@
+function getMiddle(s){
+  var str = "";
+  if (s.length % 2 !== 0){  //the word is odd
+    str = s.charAt(Math.floor(s.length/2));
+    return str;
+} else {
+    str = s.charAt(s.length / 2 - 1) + s.charAt(s.length / 2);
+    return str;
+}
+}

@@ -1,0 +1,14 @@
+function isIsogram(str){
+
+str = str.toLowerCase();
+var isostring = str.split("");
+var test = "";
+
+for (i=0; i<isostring.length; i++){
+  if (test.indexOf(isostring[i]) !== -1){
+      return false;
+    }
+  test += "," + isostring[i] + ",";  
+}
+return true;
+}

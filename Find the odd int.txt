@@ -1,0 +1,13 @@
+function findOdd(A) {
+  var arr = [];
+
+  for (var i=0; i<A.length; i++){
+  if(arr.indexOf(A[i]) == -1){
+  arr.push(A[i]);
+  }
+  else {
+  arr.splice(arr.indexOf(A[i]),1);
+  }
+  } 
+  return arr[0];
+}

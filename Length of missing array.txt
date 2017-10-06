@@ -1,0 +1,49 @@
+function getLengthOfMissingArray(arrayOfArrays) {
+  var arr = [];
+  var comparr = [];
+  var i;
+  var answer = [];
+  var defaultAns = 0;
+  
+  if (arrayOfArrays === null){
+    return 0;
+  }
+  
+  for (i=0; i<arrayOfArrays.length; i++){
+    if(arrayOfArrays[i] === null){
+    return 0;
+    }
+  }
+  
+  
+  if (!arrayOfArrays.length){
+  return 0;
+  }
+  
+  for (var i=0; i<arrayOfArrays.length; i++){
+    if(!arrayOfArrays[i].length){
+    return 0;
+    } else {
+    arr.push(arrayOfArrays[i].length);
+    }
+  }
+  
+  arr = arr.sort(function(a,b){
+    return b-a;
+  });
+  i = arr[0];
+  
+  
+  do {
+  comparr.push(i);
+  i--;
+  }
+  while (i > -1);
+  
+  for (var i=0; i<comparr.length; i++){
+    if(arr.indexOf(comparr[i]) == -1){
+      answer.push(comparr[i]);
+  }
+  }
+  return answer[0];
+}
